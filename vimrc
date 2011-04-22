@@ -36,6 +36,8 @@ if v:version >= 703
     set colorcolumn=+1 "mark the ideal max text width
 endif
 
+nnoremap <F5> :GundoToggle<CR>
+
 "default indent settings
 set shiftwidth=4
 set softtabstop=4
@@ -264,7 +266,7 @@ let Tlist_Show_One_File = 1
 
 "nerdtree settings
 let g:NERDTreeMouseMode = 2
-let g:NERDTreeWinSize = 40
+let g:NERDTreeWinSize = 20
 
 "explorer mappings
 nnoremap <f1> :BufExplorer<cr>
@@ -314,3 +316,7 @@ endfunction
 
 "spell check when writing commit logs
 autocmd filetype svn,*commit* set spell
+
+"set autochdir on
+set autochdir
+
