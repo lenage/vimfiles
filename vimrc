@@ -319,4 +319,4 @@ autocmd filetype svn,*commit* set spell
 
 "set autochdir on
 set autochdir
-
+let g:cssColorVimDoNotMessMyUpdatetime = 1
