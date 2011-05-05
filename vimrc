@@ -68,8 +68,8 @@ filetype indent on
 syntax on
 
 "some stuff to get the mouse going in term
-set mouse=a
-set ttymouse=xterm2
+"set mouse=a
+"set ttymouse=xterm2
 
 "tell the term has 256 colors
 set t_Co=256
@@ -320,3 +320,7 @@ autocmd filetype svn,*commit* set spell
 "set autochdir on
 set autochdir
 let g:cssColorVimDoNotMessMyUpdatetime = 1
+
+"TwitVim setting
+let twitvim_enable_python = 1
+let twitvim_proxy = "127.0.0.1:7070"
