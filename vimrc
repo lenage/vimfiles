@@ -324,3 +324,9 @@ let g:cssColorVimDoNotMessMyUpdatetime = 1
 "TwitVim setting
 let twitvim_enable_python = 1
 let twitvim_proxy = "127.0.0.1:7070"
+
+"vim templates setting
+autocmd BufNewFile * silent! 0r ~/.vim/templates/%:e.tpl
+"keybind for templates files edit
+nnoremap <c-j> /<+.\{-1,}+><cr>c/+>/e<cr>
+inoremap <c-j> <ESC>/<+.\{-1,}+><cr>c/+>/e<cr>
