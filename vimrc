@@ -18,8 +18,8 @@ set showmode    "show current mode down the bottom
 set number      "show line numbers
 
 "display tabs and trailing spaces
-set list
-set listchars=tab:▷⋅,trail:⋅,nbsp:⋅
+"set list
+"set listchars=tab:▷⋅,trail:⋅,nbsp:⋅
 
 
 set incsearch   "find the next match as we type the search
@@ -86,6 +86,8 @@ set statusline+=%{&ff!='unix'?'['.&ff.']':''}
 set statusline+=%*
 
 "display a warning if file encoding isnt utf-8
+set fenc=utf-8
+"set fileencoding=utf-8,cp936,gb18030,big5
 set statusline+=%#warningmsg#
 set statusline+=%{(&fenc!='utf-8'&&&fenc!='')?'['.&fenc.']':''}
 set statusline+=%*
@@ -113,12 +115,12 @@ set statusline+=%#error#
 set statusline+=%{&paste?'[paste]':''}
 set statusline+=%*
 
-set statusline+=%=      "left/right separator
-set statusline+=%{StatuslineCurrentHighlight()}\ \ "current highlight
-set statusline+=%c,     "cursor column
-set statusline+=%l/%L   "cursor line/total lines
-set statusline+=\ %P    "percent through file
-set laststatus=2
+"set statusline+=%=      "left/right separator
+"set statusline+=%{StatuslineCurrentHighlight()}\ \ "current highlight
+"set statusline+=%c,     "cursor column
+"set statusline+=%l/%L   "cursor line/total lines
+"set statusline+=\ %P    "percent through file
+"set laststatus=2
 
 "recalculate the trailing whitespace warning when idle, and after saving
 autocmd cursorhold,bufwritepost * unlet! b:statusline_trailing_space_warning
@@ -143,22 +145,22 @@ function! StatuslineTrailingSpaceWarning()
 endfunction
 
 
-"return the syntax highlight group under the cursor ''
-function! StatuslineCurrentHighlight()
-    let name = synIDattr(synID(line('.'),col('.'),1),'name')
-    if name == ''
-        return ''
-    else
-        return '[' . name . ']'
-    endif
-endfunction
+""return the syntax highlight group under the cursor ''
+"function! StatuslineCurrentHighlight()
+"    let name = synIDattr(synID(line('.'),col('.'),1),'name')
+"    if name == ''
+"        return ''
+"    else
+"        return '[' . name . ']'
+"    endif
+"endfunction
 
 "recalculate the tab warning flag when idle and after writing
 autocmd cursorhold,bufwritepost * unlet! b:statusline_tab_warning
 
-"return '[&et]' if &et is set wrong
-"return '[mixed-indenting]' if spaces and tabs are used to indent
-"return an empty string if everything is fine
+""return '[&et]' if &et is set wrong
+""return '[mixed-indenting]' if spaces and tabs are used to indent
+""return an empty string if everything is fine
 function! StatuslineTabWarning()
     if !exists("b:statusline_tab_warning")
         let b:statusline_tab_warning = ''
@@ -169,7 +171,7 @@ function! StatuslineTabWarning()
 
         let tabs = search('^\t', 'nw') != 0
 
-        "find spaces that arent used as alignment in the first indent column
+       "find spaces that arent used as alignment in the first indent column
         let spaces = search('^ \{' . &ts . ',}[^\t]', 'nw') != 0
 
         if tabs && spaces
@@ -319,11 +321,7 @@ autocmd filetype svn,*commit* set spell
 
 "set autochdir on
 set autochdir
-let g:cssColorVimDoNotMessMyUpdatetime = 1
 
-"TwitVim setting
-let twitvim_enable_python = 1
-let twitvim_proxy = "127.0.0.1:7070"
 
 "vim templates setting
 autocmd BufNewFile * silent! 0r ~/.vim/templates/%:e.tpl
