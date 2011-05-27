@@ -328,3 +328,7 @@ autocmd BufNewFile * silent! 0r ~/.vim/templates/%:e.tpl
 "keybind for templates files edit
 nnoremap <c-j> /<+.\{-1,}+><cr>c/+>/e<cr>
 inoremap <c-j> <ESC>/<+.\{-1,}+><cr>c/+>/e<cr>
+
+"snipmate_for_django
+autocmd FileType python set ft=python.django " For SnipMate
+autocmd FileType html set ft=htmldjango.html " For SnipMate
