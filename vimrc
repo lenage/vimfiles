@@ -20,6 +20,7 @@ set number      "show line numbers
 "display tabs and trailing spaces
 "set list
 "set listchars=tab:▷⋅,trail:⋅,nbsp:⋅
+colorscheme desert256
 
 
 set incsearch   "find the next match as we type the search
@@ -72,7 +73,7 @@ syntax on
 "set ttymouse=xterm2
 
 "tell the term has 256 colors
-set t_Co=256
+"set t_Co=256
 
 "hide buffers when not displayed
 set hidden
@@ -330,5 +331,5 @@ nnoremap <c-j> /<+.\{-1,}+><cr>c/+>/e<cr>
 inoremap <c-j> <ESC>/<+.\{-1,}+><cr>c/+>/e<cr>
 
 "snipmate_for_django
-autocmd FileType python set ft=python.django " For SnipMate
-autocmd FileType html set ft=htmldjango.html " For SnipMate
+"autocmd FileType python set ft=python.django " For SnipMate
+"autocmd FileType html set ft=htmldjango.html " For SnipMate
