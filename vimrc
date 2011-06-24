@@ -40,8 +40,8 @@ endif
 nnoremap <F5> :GundoToggle<CR>
 
 "default indent settings
-set shiftwidth=4
-set softtabstop=4
+set shiftwidth=2
+set softtabstop=2
 set expandtab
 set autoindent
 
@@ -333,3 +333,8 @@ inoremap <c-j> <ESC>/<+.\{-1,}+><cr>c/+>/e<cr>
 "snipmate_for_django
 "autocmd FileType python set ft=python.django " For SnipMate
 "autocmd FileType html set ft=htmldjango.html " For SnipMate
+
+"Removing the toolbar in Macvim
+if has("gui_running")
+    set guioptions=egmrt
+endif
