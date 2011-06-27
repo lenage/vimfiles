@@ -79,3 +79,9 @@
 [submodule "bundle/vim-slim"]
 	path = bundle/vim-slim
 	url = https://github.com/bbommarito/vim-slim.git
+[submodule "bundle/mustache.vim"]
+	path = bundle/mustache.vim
+	url = git://github.com/juvenn/mustache.vim.git
+[submodule "bundle/command-t"]
+	path = bundle/command-t
+	url = https://github.com/wincent/Command-T.git
