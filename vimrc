@@ -20,7 +20,8 @@ set number      "show line numbers
 "display tabs and trailing spaces
 "set list
 "set listchars=tab:▷⋅,trail:⋅,nbsp:⋅
-colorscheme desert256
+"colorscheme tango2
+colorscheme inkpot 
 
 
 set incsearch   "find the next match as we type the search
@@ -40,9 +41,10 @@ endif
 nnoremap <F5> :GundoToggle<CR>
 
 "default indent settings
-set shiftwidth=2
-set softtabstop=2
 set expandtab
+set shiftwidth=2
+"set tabstop=2
+set softtabstop=2
 set autoindent
 
 "folding settings
@@ -256,6 +258,7 @@ let g:syntastic_auto_loc_list=2
 let g:snips_author = "Martin Grenfell"
 
 "taglist settings
+let Tlist_Ctags_Cmd = '/usr/local/bin/ctags'
 let Tlist_Compact_Format = 1
 let Tlist_Enable_Fold_Column = 0
 let Tlist_Exit_OnlyWindow = 0
@@ -269,7 +272,7 @@ let Tlist_Show_One_File = 1
 
 "nerdtree settings
 let g:NERDTreeMouseMode = 2
-let g:NERDTreeWinSize = 20
+let g:NERDTreeWinSize = 30
 
 "explorer mappings
 nnoremap <f1> :BufExplorer<cr>
@@ -337,4 +340,9 @@ inoremap <c-j> <ESC>/<+.\{-1,}+><cr>c/+>/e<cr>
 "Removing the toolbar in Macvim
 if has("gui_running")
     set guioptions=egmrt
+endif
+
+" toggle full screen on macvim 
+if has("gui_macvim")
+    set fuoptions=maxvert,maxhorz
 endif
