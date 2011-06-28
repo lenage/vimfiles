@@ -41,6 +41,7 @@ endif
 nnoremap <F5> :GundoToggle<CR>
 
 "default indent settings
+set nowrap
 set expandtab
 set shiftwidth=2
 "set tabstop=2
@@ -52,7 +53,7 @@ set foldmethod=indent   "fold based on indent
 set foldnestmax=3       "deepest fold is 3 levels
 set nofoldenable        "dont fold by default
 
-set wildmode=list:longest   "make cmdline tab completion similar to bash
+set wildmode=list:longest,list:full   "make cmdline tab completion similar to bash
 set wildmenu                "enable ctrl-n and ctrl-p to scroll thru matches
 set wildignore=*.o,*.obj,*~ "stuff to ignore when tab completing
 
@@ -272,7 +273,7 @@ let Tlist_Show_One_File = 1
 
 "nerdtree settings
 let g:NERDTreeMouseMode = 2
-let g:NERDTreeWinSize = 30
+let g:NERDTreeWinSize = 25
 
 "explorer mappings
 nnoremap <f1> :BufExplorer<cr>
@@ -346,3 +347,6 @@ endif
 if has("gui_macvim")
     set fuoptions=maxvert,maxhorz
 endif
+
+"Command-T configuration
+let g:CommandTMaxHeight=20
