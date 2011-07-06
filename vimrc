@@ -38,7 +38,6 @@ if v:version >= 703
     set colorcolumn=+1 "mark the ideal max text width
 endif
 
-nnoremap <F5> :GundoToggle<CR>
 
 "default indent settings
 set nowrap
@@ -276,9 +275,17 @@ let g:NERDTreeMouseMode = 2
 let g:NERDTreeWinSize = 25
 
 "explorer mappings
-nnoremap <f1> :BufExplorer<cr>
-nnoremap <f2> :NERDTreeToggle<cr>
-nnoremap <f3> :TlistToggle<cr>
+if has("gui_macvim")
+  nnoremap <Leader>1 :BufExplorer<cr>
+  nnoremap <Leader>2 :NERDTreeToggle<cr>
+  nnoremap <Leader>3 :TlistToggle<cr>
+  nnoremap <Leader>4 :GundoToggle<CR>
+else
+  nnoremap <f1> :BufExplorer<cr>
+  nnoremap <f2> :NERDTreeToggle<cr>
+  nnoremap <f3> :TlistToggle<cr>
+  nnoremap <F5> :GundoToggle<CR>
+endif
 
 "source project specific config files
 runtime! projects/**/*.vim
@@ -350,3 +357,16 @@ endif
 
 "Command-T configuration
 let g:CommandTMaxHeight=20
+
+"open and close Vim without losing the setting,list of open files
+autocmd VimEnter * call LoadSession()
+autocmd VimLeave * call SaveSession()
+function! SaveSession()
+  execute 'mksession! $HOME/.vim/sessions/session.vim'
+endfunction
+
+function! LoadSession()
+  if argc() == 0
+    execute 'source $HOME/.vim/sessions/session.vim'
+  endif
+endfunction

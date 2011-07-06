@@ -5,3 +5,6 @@ tags
 undofiles/*
 projects/*
 .netrwhist
+sessions/*
+tmp
+view/*
