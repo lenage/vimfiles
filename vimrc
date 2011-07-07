@@ -21,7 +21,7 @@ set number      "show line numbers
 "set list
 "set listchars=tab:▷⋅,trail:⋅,nbsp:⋅
 "colorscheme tango2
-colorscheme inkpot 
+"colorscheme inkpot 
 
 
 set incsearch   "find the next match as we type the search
@@ -75,7 +75,7 @@ syntax on
 "set ttymouse=xterm2
 
 "tell the term has 256 colors
-"set t_Co=256
+set t_Co=256
 
 "hide buffers when not displayed
 set hidden
@@ -118,12 +118,12 @@ set statusline+=%#error#
 set statusline+=%{&paste?'[paste]':''}
 set statusline+=%*
 
-"set statusline+=%=      "left/right separator
-"set statusline+=%{StatuslineCurrentHighlight()}\ \ "current highlight
-"set statusline+=%c,     "cursor column
-"set statusline+=%l/%L   "cursor line/total lines
-"set statusline+=\ %P    "percent through file
-"set laststatus=2
+set statusline+=%=      "left/right separator
+set statusline+=%{StatuslineCurrentHighlight()}\ \ "current highlight
+set statusline+=%c,     "cursor column
+set statusline+=%l/%L   "cursor line/total lines
+set statusline+=\ %P    "percent through file
+set laststatus=2
 
 "recalculate the trailing whitespace warning when idle, and after saving
 autocmd cursorhold,bufwritepost * unlet! b:statusline_trailing_space_warning
@@ -148,15 +148,15 @@ function! StatuslineTrailingSpaceWarning()
 endfunction
 
 
-""return the syntax highlight group under the cursor ''
-"function! StatuslineCurrentHighlight()
-"    let name = synIDattr(synID(line('.'),col('.'),1),'name')
-"    if name == ''
-"        return ''
-"    else
-"        return '[' . name . ']'
-"    endif
-"endfunction
+"return the syntax highlight group under the cursor ''
+function! StatuslineCurrentHighlight()
+    let name = synIDattr(synID(line('.'),col('.'),1),'name')
+    if name == ''
+        return ''
+    else
+        return '[' . name . ']'
+    endif
+endfunction
 
 "recalculate the tab warning flag when idle and after writing
 autocmd cursorhold,bufwritepost * unlet! b:statusline_tab_warning
@@ -275,17 +275,10 @@ let g:NERDTreeMouseMode = 2
 let g:NERDTreeWinSize = 25
 
 "explorer mappings
-if has("gui_macvim")
-  nnoremap <Leader>1 :BufExplorer<cr>
-  nnoremap <Leader>2 :NERDTreeToggle<cr>
-  nnoremap <Leader>3 :TlistToggle<cr>
-  nnoremap <Leader>4 :GundoToggle<CR>
-else
-  nnoremap <f1> :BufExplorer<cr>
-  nnoremap <f2> :NERDTreeToggle<cr>
-  nnoremap <f3> :TlistToggle<cr>
-  nnoremap <F5> :GundoToggle<CR>
-endif
+nnoremap <Leader>1 :BufExplorer<cr>
+nnoremap <Leader>2 :NERDTreeToggle<cr>
+nnoremap <Leader>3 :TlistToggle<cr>
+nnoremap <Leader>4 :GundoToggle<CR>
 
 "source project specific config files
 runtime! projects/**/*.vim
@@ -359,14 +352,14 @@ endif
 let g:CommandTMaxHeight=20
 
 "open and close Vim without losing the setting,list of open files
-autocmd VimEnter * call LoadSession()
-autocmd VimLeave * call SaveSession()
-function! SaveSession()
-  execute 'mksession! $HOME/.vim/sessions/session.vim'
-endfunction
+" autocmd VimEnter * call LoadSession()
+" autocmd VimLeave * call SaveSession()
+" function! SaveSession()
+"   execute 'mksession! $HOME/.vim/sessions/session.vim'
+" endfunction
 
-function! LoadSession()
-  if argc() == 0
-    execute 'source $HOME/.vim/sessions/session.vim'
-  endif
-endfunction
+" function! LoadSession()
+"   if argc() == 0
+"     execute 'source $HOME/.vim/sessions/session.vim'
+"   endif
+" endfunction
