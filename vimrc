@@ -22,6 +22,9 @@ set number      "show line numbers
 "set listchars=tab:▷⋅,trail:⋅,nbsp:⋅
 "colorscheme tango2
 "colorscheme inkpot 
+if has("gui_macvim")
+    colorscheme inkpot 
+endif
 
 
 set incsearch   "find the next match as we type the search
