@@ -23,7 +23,7 @@ set number      "show line numbers
 "colorscheme tango2
 "colorscheme inkpot 
 if has("gui_macvim")
-    colorscheme inkpot 
+    colorscheme molokai
 endif
 
 
@@ -366,3 +366,4 @@ let g:CommandTMaxHeight=20
 "     execute 'source $HOME/.vim/sessions/session.vim'
 "   endif
 " endfunction
+set guifont=Monaco:h12
