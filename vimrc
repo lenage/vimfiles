@@ -23,7 +23,7 @@ set number      "show line numbers
 "colorscheme tango2
 "colorscheme inkpot 
 if has("gui_macvim")
-    colorscheme inkpot 
+    colorscheme molokai
 endif
 
 
@@ -366,14 +366,4 @@ let g:CommandTMaxHeight=20
 "     execute 'source $HOME/.vim/sessions/session.vim'
 "   endif
 " endfunction
-
-"SuperTab configuration
-function MyTagContext()
-  if filereadable(expand('%:p:h') . '/tags')
-    return "\<c-x>\<c-]>"
-  endif
-  " no return will result in the evaluation of the next
-  " configured context
-endfunction
-let g:SuperTabCompletionContexts =
-    \ ['MyTagContext', 's:ContextText', 's:ContextDiscover']
+set guifont=Monaco:h12
