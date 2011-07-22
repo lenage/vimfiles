@@ -367,3 +367,6 @@ let g:CommandTMaxHeight=20
 "   endif
 " endfunction
 set guifont=Monaco:h12
+
+"configuration for autocomplpop
+let g:acp_behaviorSnipmateLength = 1
