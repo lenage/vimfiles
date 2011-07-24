@@ -26,7 +26,6 @@ set number      "show line numbers
 if has("gui_macvim")
   colorscheme molokai 
 endif
-colorscheme af 
 
 set incsearch   "find the next match as we type the search
 set hlsearch    "hilight searches by default
