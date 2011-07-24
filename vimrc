@@ -22,9 +22,10 @@ set number      "show line numbers
 
 "display tabs and trailing spaces
 "set list
-"set listchars=tab:▷⋅,trail:⋅,nbsp:⋅
+set listchars=tab:▸\ ,eol:¬
 if has("gui_macvim")
   colorscheme molokai 
+  set lines=30 columns=100
 endif
 
 set incsearch   "find the next match as we type the search
@@ -105,7 +106,7 @@ set statusline+=%{&paste?'[paste]':''}
 set statusline+=%*
 
 set statusline+=%=      "left/right separator
-set statusline+=%{StatuslineCurrentHighlight()}\ \ "current highlight
+"set statusline+=%{StatuslineCurrentHighlight()}\ \ "current highlight
 set statusline+=%c,     "cursor column
 set statusline+=%l/%L   "cursor line/total lines
 set statusline+=\ %P    "percent through file
@@ -135,14 +136,14 @@ endfunction
 
 
 "return the syntax highlight group under the cursor ''
-function! StatuslineCurrentHighlight()
-  let name = synIDattr(synID(line('.'),col('.'),1),'name')
-  if name == ''
-    return ''
-  else
-    return '[' . name . ']'
-  endif
-endfunction
+"function! StatuslineCurrentHighlight()
+  "let name = synIDattr(synID(line('.'),col('.'),1),'name')
+  "if name == ''
+    "return ''
+  "else
+    "return '[' . name . ']'
+  "endif
+"endfunction
 
 "recalculate the tab warning flag when idle and after writing
 autocmd cursorhold,bufwritepost * unlet! b:statusline_tab_warning
