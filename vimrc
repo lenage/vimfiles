@@ -1,10 +1,13 @@
-"Use Vim settings, rather then Vi settings (much better!).
-"This must be first, because it changes other options as a side effect.
-set nocompatible
+"avoiding annoying CSApprox warning message
+let g:CSApprox_verbose_level = 0
 
 "activate pathogen
 call pathogen#runtime_append_all_bundles()
 call pathogen#helptags()
+
+"Use Vim settings, rather then Vi settings (much better!).
+"This must be first, because it changes other options as a side effect.
+set nocompatible
 
 "allow backspacing over everything in insert mode
 set backspace=indent,eol,start
@@ -20,12 +23,7 @@ set number      "show line numbers
 "display tabs and trailing spaces
 "set list
 "set listchars=tab:▷⋅,trail:⋅,nbsp:⋅
-"colorscheme tango2
-"colorscheme inkpot 
-if has("gui_macvim")
-    colorscheme molokai
-endif
-
+colorscheme molokai
 
 set incsearch   "find the next match as we type the search
 set hlsearch    "hilight searches by default
@@ -86,28 +84,11 @@ set hidden
 "statusline setup
 set statusline=%f       "tail of the filename
 
-"display a warning if fileformat isnt unix
-set statusline+=%#warningmsg#
-set statusline+=%{&ff!='unix'?'['.&ff.']':''}
-set statusline+=%*
-
+"Git
+set statusline+=[%{GitBranch()}]
 "display a warning if file encoding isnt utf-8
 set fenc=utf-8
-"set fileencoding=utf-8,cp936,gb18030,big5
-set statusline+=%#warningmsg#
-set statusline+=%{(&fenc!='utf-8'&&&fenc!='')?'['.&fenc.']':''}
-set statusline+=%*
-
-set statusline+=%h      "help file flag
-set statusline+=%y      "filetype
-set statusline+=%r      "read only flag
-set statusline+=%m      "modified flag
-
 "display a warning if &et is wrong, or we have mixed-indenting
-set statusline+=%#error#
-set statusline+=%{StatuslineTabWarning()}
-set statusline+=%*
-
 set statusline+=%{StatuslineTrailingSpaceWarning()}
 
 set statusline+=%{StatuslineLongLineWarning()}
@@ -346,7 +327,7 @@ if has("gui_running")
     set guioptions=egmrt
 endif
 
-" toggle full screen on macvim 
+" toggle full screen on macvim
 if has("gui_macvim")
     set fuoptions=maxvert,maxhorz
 endif
