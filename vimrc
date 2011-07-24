@@ -324,7 +324,7 @@ inoremap <c-j> <ESC>/<+.\{-1,}+><cr>c/+>/e<cr>
 
 "Removing the toolbar in Macvim
 if has("gui_running")
-    set guioptions=egmrt
+    set guioptions=egmt
 endif
 
 " toggle full screen on macvim
