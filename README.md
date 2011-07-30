@@ -25,6 +25,9 @@ Clone the repo:
 Grab the plugin submodules:
 `cd ~/.vim && git submodule init && git submodule update`
 
+If you are Mac user,just do this:
+`git branch -t origin/mac
+
 
 Make sure vim finds the vimrc file by either symlinking it:
 `ln -s ~/.vim/vimrc ~/.vimrc`

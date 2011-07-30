@@ -25,7 +25,6 @@ set number      "show line numbers
 set listchars=tab:▸\ ,eol:¬
 if has("gui_macvim")
   colorscheme molokai 
-  set lines=30 columns=100
 endif
 
 set incsearch   "find the next match as we type the search
