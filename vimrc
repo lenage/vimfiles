@@ -311,7 +311,7 @@ endfunction
 autocmd filetype svn,*commit* set spell
 
 "set autochdir on
-set autochdir
+"set autochdir
 
 
 "vim templates setting
@@ -335,7 +335,7 @@ if has("gui_macvim")
 endif
 
 "Command-T configuration
-"let g:CommandTMaxHeight=20
+let g:CommandTMaxHeight=20
 
 "NERDcomment setting
 let NERDDefaultNesting = 0
@@ -355,4 +355,14 @@ set guifont=Monaco:h12
 
 "configuration for autocomplpop
 let g:acp_behaviorSnipmateLength = 1
+
+" Tabular
+if exists(":Tabularize")
+	nmap <Leader>a> :Tabularize /=><CR>
+	vmap <Leader>a> :Tabularize /=><CR>
+	nmap <Leader>a= :Tabularize /=<CR>
+	vmap <Leader>a= :Tabularize /=<CR>
+	nmap <Leader>a: :Tabularize /:\zs<CR>
+	vmap <Leader>a: :Tabularize /:\zs<CR>
+endif
 " vim:noet:sw=4:ts=4:ft=vim

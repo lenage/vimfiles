@@ -106,3 +106,9 @@
 [submodule "bundle/orgmode"]
 	path = bundle/orgmode
 	url = https://github.com/jceb/vim-orgmode.git
+[submodule "bundle/command-t"]
+	path = bundle/command-t
+	url = https://github.com/wincent/Command-T.git
+[submodule "bundle/tabular"]
+	path = bundle/tabular
+	url = https://github.com/godlygeek/tabular.git
