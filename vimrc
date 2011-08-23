@@ -23,7 +23,7 @@ set number      "show line numbers
 "display tabs and trailing spaces
 "set list
 "set listchars=tab:▷⋅,trail:⋅,nbsp:⋅
-colorscheme molokai
+colorscheme desert256 
 
 set incsearch   "find the next match as we type the search
 set hlsearch    "hilight searches by default
@@ -85,7 +85,7 @@ set hidden
 set statusline=%f       "tail of the filename
 
 "Git
-set statusline+=[%{GitBranch()}]
+"set statusline+=[%{GitBranch()}]
 "display a warning if file encoding isnt utf-8
 set fenc=utf-8
 "display a warning if &et is wrong, or we have mixed-indenting
@@ -242,7 +242,7 @@ let g:syntastic_auto_loc_list=2
 let g:snips_author = "Martin Grenfell"
 
 "taglist settings
-let Tlist_Ctags_Cmd = '/usr/local/bin/ctags'
+let Tlist_Ctags_Cmd = '/usr/bin/ctags'
 let Tlist_Compact_Format = 1
 let Tlist_Enable_Fold_Column = 0
 let Tlist_Exit_OnlyWindow = 0
@@ -324,7 +324,9 @@ inoremap <c-j> <ESC>/<+.\{-1,}+><cr>c/+>/e<cr>
 
 "Removing the toolbar in Macvim
 if has("gui_running")
-    set guioptions=egmrt
+    set guioptions=egmt
+    set guioptions-=m
+    set guioptions-=r
 endif
 
 " toggle full screen on macvim
@@ -347,7 +349,7 @@ let g:CommandTMaxHeight=20
 "     execute 'source $HOME/.vim/sessions/session.vim'
 "   endif
 " endfunction
-set guifont=Monaco:h12
+"set guifont=Monaco:h12
 
 "configuration for autocomplpop
 let g:acp_behaviorSnipmateLength = 1
