@@ -241,7 +241,7 @@ let g:syntastic_enable_signs=1
 let g:syntastic_auto_loc_list=2
 
 "snipmate settings
-let g:snips_author = "Martin Grenfell"
+let g:snips_author = "Joel He"
 
 "taglist settings
 let Tlist_Ctags_Cmd = '/usr/local/bin/ctags'
@@ -265,6 +265,8 @@ nnoremap <Leader>1 :BufExplorer<cr>
 nnoremap <Leader>2 :NERDTreeToggle<cr>
 nnoremap <Leader>3 :TlistToggle<cr>
 nnoremap <Leader>4 :GundoToggle<CR>
+
+imap jj <ESC>
 
 "source project specific config files
 runtime! projects/**/*.vim
@@ -355,6 +357,8 @@ set guifont=Monaco:h12
 
 "configuration for autocomplpop
 let g:acp_behaviorSnipmateLength = 1
+
+"insert current time
 
 " Tabular
 if exists(":Tabularize")
