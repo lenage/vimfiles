@@ -112,3 +112,12 @@
 [submodule "bundle/tabular"]
 	path = bundle/tabular
 	url = https://github.com/godlygeek/tabular.git
+[submodule "bundle/vim-coffee-script"]
+	path = bundle/vim-coffee-script
+	url = https://github.com/kchmck/vim-coffee-script.git
+[submodule "bundle/dbext"]
+	path = bundle/dbext
+	url = https://github.com/zklinger/dbext.git
+[submodule "bundle/twitvim"]
+	path = bundle/twitvim
+	url = https://github.com/vim-scripts/TwitVim.git
