@@ -26,7 +26,7 @@ set listchars=tab:▸\ ,eol:¬
 if has("gui_running")
 	colorscheme molokai
 else
-	colorscheme desert
+	colorscheme inkpot
 endif
 
 set incsearch   "find the next match as we type the search
