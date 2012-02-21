@@ -23,16 +23,18 @@ set number      "show line numbers
 "display tabs and trailing spaces
 set list
 set listchars=tab:▸\ ,eol:¬
+set background=dark
 if has("gui_running")
-	colorscheme molokai
+	colorscheme solarized
 else
-	colorscheme inkpot
+	"colorscheme inkpot
+	colorscheme railscasts
 endif
 
 set incsearch   "find the next match as we type the search
-set hlsearch    "hilight searches by default
+set hlsearch    "highlight searches by default
 
-set wrap        "dont wrap lines
+set wrap        "don't wrap lines
 set linebreak   "wrap lines at convenient points
 
 if v:version >= 703
@@ -314,6 +316,8 @@ endif
 
 "Command-T configuration
 let g:CommandTMaxHeight=20
+"powerline
+let g:Powerline_symbols='fancy'
 
 "NERDcomment setting
 let NERDDefaultNesting = 0
@@ -348,7 +352,7 @@ if exists(":Tabularize")
 	vmap <Leader>a: :Tabularize /:\zs<CR>
 endif
 
-"filetype
+"Filetype
 if has("autocmd")
 	au BufRead,BufNewFile *.go set filetype=go
 	autocmd BufNewFile,BufRead *.slim setf slim
