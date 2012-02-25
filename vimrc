@@ -23,12 +23,12 @@ set number      "show line numbers
 "display tabs and trailing spaces
 set list
 set listchars=tab:▸\ ,eol:¬
-set background=dark
+
 if has("gui_running")
+	set background=dark
 	colorscheme solarized
 else
-	"colorscheme inkpot
-	colorscheme railscasts
+	colorscheme molokai
 endif
 
 set incsearch   "find the next match as we type the search
