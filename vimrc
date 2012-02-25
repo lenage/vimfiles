@@ -229,6 +229,7 @@ let Tlist_Show_One_File = 1
 "nerdtree settings
 let g:NERDTreeMouseMode = 2
 let g:NERDTreeWinSize = 25
+let g:NERDTreeDirArrows=0
 
 "explorer mappings
 nnoremap <Leader>1 :BufExplorer<cr>
