@@ -2,8 +2,11 @@
 let g:CSApprox_verbose_level = 0
 
 "activate pathogen
+filetype on
+filetype off
 call pathogen#runtime_append_all_bundles()
 call pathogen#helptags()
+filetype plugin indent on
 
 "Use Vim settings, rather then Vi settings (much better!).
 "This must be first, because it changes other options as a side effect.
@@ -64,10 +67,6 @@ set scrolloff=3
 set sidescrolloff=7
 set sidescroll=1
 
-"load ftplugins and indent files
-filetype plugin on
-filetype indent on
-
 "turn on syntax highlighting
 syntax on
 
@@ -80,7 +79,6 @@ set t_Co=256
 
 "hide buffers when not displayed
 set hidden
-
 "statusline setup
 set statusline=%f       "tail of the filename
 
@@ -242,17 +240,17 @@ let g:syntastic_auto_loc_list=2
 let g:snips_author = "Martin Grenfell"
 
 "taglist settings
-let Tlist_Ctags_Cmd = '/usr/bin/ctags'
-let Tlist_Compact_Format = 1
-let Tlist_Enable_Fold_Column = 0
-let Tlist_Exit_OnlyWindow = 0
-let Tlist_WinWidth = 35
-let tlist_php_settings = 'php;c:class;f:Functions'
-let Tlist_Use_Right_Window=1
-let Tlist_GainFocus_On_ToggleOpen = 1
-let Tlist_Display_Tag_Scope = 1
-let Tlist_Process_File_Always = 1
-let Tlist_Show_One_File = 1
+"let Tlist_Ctags_Cmd = '/usr/bin/ctags'
+"let Tlist_Compact_Format = 1
+"let Tlist_Enable_Fold_Column = 0
+"let Tlist_Exit_OnlyWindow = 0
+"let Tlist_WinWidth = 35
+"let tlist_php_settings = 'php;c:class;f:Functions'
+"let Tlist_Use_Right_Window=1
+"let Tlist_GainFocus_On_ToggleOpen = 1
+"let Tlist_Display_Tag_Scope = 1
+"let Tlist_Process_File_Always = 1
+"let Tlist_Show_One_File = 1
 
 "nerdtree settings
 let g:NERDTreeMouseMode = 2
@@ -265,7 +263,7 @@ nnoremap <Leader>3 :TlistToggle<cr>
 nnoremap <Leader>4 :GundoToggle<CR>
 
 "source project specific config files
-runtime! projects/**/*.vim
+"runtime! projects/**/*.vim
 
 "dont load csapprox if we no gui support - silences an annoying warning
 if !has("gui")
@@ -350,6 +348,3 @@ let g:CommandTMaxHeight=20
 "   endif
 " endfunction
 "set guifont=Monaco:h12
-
-"configuration for autocomplpop
-let g:acp_behaviorSnipmateLength = 1
